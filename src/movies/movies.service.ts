@@ -25,4 +25,8 @@ export class MoviesService {
     async update(id: string, createMovieDTO:CreateMovieDTO){
         return this.movieModel.findByIdAndUpdate(id, createMovieDTO, { new:true }).exec();
     }
+
+    async delete(id: string){
+        return this.movieModel.findByIdAndDelete(id).exec();
+    }
 }
