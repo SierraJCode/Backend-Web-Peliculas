@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Movie } from './movie.schema';
-//import { CreateMovieDTO } from './movie.dto';
+import { CreateMovieDTO } from './movie.dto';
 import { Model } from 'mongoose';
 
 @Injectable()
@@ -15,5 +15,10 @@ export class MoviesService {
 
     async findOne(id:string){
         return this.movieModel.findById(id)
+    }
+
+    async create(createMovieDTO: CreateMovieDTO){
+        const movie = new this.movieModel(createMovieDTO);
+        return movie.save();
     }
 }
