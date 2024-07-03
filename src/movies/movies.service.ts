@@ -10,11 +10,11 @@ export class MoviesService {
     constructor(@InjectModel(Movie.name) private movieModel: Model<Movie>){}
 
     async findAll(){
-        return this.movieModel.find();
+        return this.movieModel.find().exec();
     };
 
     async findOne(id:string){
-        return this.movieModel.findById(id)
+        return this.movieModel.findById(id).exec();
     }
 
     async create(createMovieDTO: CreateMovieDTO){
