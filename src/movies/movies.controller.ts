@@ -27,4 +27,9 @@ export class MoviesController {
     async update(@Param('id') id: string, @Body() createMovieDTO:CreateMovieDTO){
         return this.moviesService.update(id, createMovieDTO);
     }
+
+    @Delete(':id')
+    async delete(@Param('id') id: string){
+        return this.delete(id)
+    }
 }
