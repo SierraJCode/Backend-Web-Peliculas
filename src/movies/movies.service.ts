@@ -9,5 +9,7 @@ export class MoviesService {
 
     constructor(@InjectModel(Movie.name) private movieModel: Model<Movie>){}
 
-
+    async findAll(){
+        return this.movieModel.find();
+    };
 }
