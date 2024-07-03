@@ -6,11 +6,11 @@ export class Movie extends Document {
     @Prop({ required: true })
     title: string;
 
-    @Prop()
+    @Prop({required: true})
     description: string;
 
-    @Prop()
-    Productor: string;
+    @Prop({required: true})
+    producer: string;
 }
 
 export const MovieSchema = SchemaFactory.createForClass(Movie);

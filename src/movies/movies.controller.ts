@@ -30,6 +30,6 @@ export class MoviesController {
 
     @Delete(':id')
     async delete(@Param('id') id: string){
-        return this.moviesService.delete(id)
+        return this.moviesService.delete(id);
     }
 }
