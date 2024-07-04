@@ -11,6 +11,12 @@ export class Movie extends Document {
 
     @Prop({required: true})
     producer: string;
+
+    @Prop({required: true})
+    time: string;
+
+    @Prop({required: true})
+    image: string;
 }
 
 export const MovieSchema = SchemaFactory.createForClass(Movie);
